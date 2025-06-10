@@ -1,4 +1,4 @@
-// Importa os módulos necessários do Firebase
+// Importa os mÃ³dulos necessÃ¡rios do Firebase
 import { initializeApp } from "firebase/app"; // Inicializa o app Firebase
 import { getFirestore } from "firebase/firestore"; // Configura o Firestore (banco de dados)
 import {
@@ -6,33 +6,33 @@ import {
   initializeAuth,
   browserLocalPersistence,
   getReactNativePersistence,
-} from "firebase/auth"; // Configura a autenticação
-import AsyncStorage from "@react-native-async-storage/async-storage"; // Armazenamento local para persistência no React Native
+} from "firebase/auth"; // Configura a autenticaÃ§Ã£o
+import AsyncStorage from "@react-native-async-storage/async-storage"; // Armazenamento local para persistÃªncia no React Native
 import { Platform } from "react-native"; // Detecta a plataforma (web ou mobile)
 
-// Configuração do Firebase (chaves e identificadores do projeto)
+// ConfiguraÃ§Ã£o do Firebase (chaves e identificadores do projeto)
 const firebaseConfig = {
   apiKey: "", // Chave da API
-  authDomain: "", // Domínio de autenticação
+  authDomain: "", // DomÃ­nio de autenticaÃ§Ã£o
   projectId: "", // ID do projeto Firebase
   storageBucket: "", // Bucket de armazenamento
   messagingSenderId: "", // ID do remetente para mensagens
   appId: "", // ID do aplicativo
-  measurementId: "", // ID de medição (Analytics)
+  measurementId: "", // ID de mediÃ§Ã£o (Analytics)
 };
 
-// Inicializa o app Firebase com a configuração fornecida
+// Inicializa o app Firebase com a configuraÃ§Ã£o fornecida
 const app = initializeApp(firebaseConfig);
 
-// Configuração da autenticação com persistência condicional
+// ConfiguraÃ§Ã£o da autenticaÃ§Ã£o com persistÃªncia condicional
 let auth;
 
 if (Platform.OS === "web") {
-  // Para a plataforma web, usa persistência no navegador
+  // Para a plataforma web, usa persistÃªncia no navegador
   auth = getAuth(app);
   auth.setPersistence(browserLocalPersistence);
 } else {
-  // Para dispositivos móveis, usa persistência com AsyncStorage
+  // Para dispositivos mÃ³veis, usa persistÃªncia com AsyncStorage
   auth = initializeAuth(app, {
     persistence: getReactNativePersistence(AsyncStorage),
   });
@@ -41,5 +41,5 @@ if (Platform.OS === "web") {
 // Inicializa o Firestore (banco de dados do Firebase)
 const db = getFirestore(app);
 
-// Exporta as instâncias de autenticação e banco de dados para uso em outras partes do app
+// Exporta as instÃ¢ncias de autenticaÃ§Ã£o e banco de dados para uso em outras partes do app
 export { auth, db };
