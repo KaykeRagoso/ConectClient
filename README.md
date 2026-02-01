@@ -1,88 +1,164 @@
 # ConectClient
 
-ConectClient é um aplicativo desenvolvido em React Native que utiliza Firebase para autenticação, banco de dados e armazenamento. Ele oferece funcionalidades como agendamento de serviços, atendimento interativo, cadastro de usuários, feedback e muito mais.
+ConectClient é uma aplicação **mobile** desenvolvida em **React Native**, focada na **gestão e agendamento de serviços**, com autenticação de usuários, atendimento interativo e integração completa com o **Firebase**.
 
-## 📋 Funcionalidades
+O projeto foi criado com foco em **resolver problemas reais de pequenos negócios**, oferecendo uma experiência simples, intuitiva e organizada para clientes e prestadores de serviço.
 
-- **Login e Cadastro**: Autenticação de usuários com Firebase Authentication.
-- **Menu Lateral Personalizado**: Navegação intuitiva com um menu lateral customizado.
-- **Agendamento de Serviços**: Visualização e seleção de datas para agendamento de serviços.
-- **Atendimento Interativo**: Chat interativo para coletar informações do cliente e salvar pedidos no Firebase.
-- **Lista de Serviços**: Exibição de serviços disponíveis com descrições detalhadas.
-- **Feedback**: Envio de avaliações e comentários sobre os serviços.
-- **Contato**: Informações de suporte e envio de e-mails diretamente pelo aplicativo.
+---
+
+## 🎯 Objetivo do Projeto
+
+Criar uma aplicação mobile capaz de:
+
+* Centralizar o agendamento de serviços
+* Facilitar a comunicação entre cliente e empresa
+* Armazenar dados de forma segura em nuvem
+* Oferecer uma experiência de uso clara e fluida
+
+Este projeto simula um cenário real de produção, aplicando boas práticas de organização de código, navegação e integração com backend em nuvem.
+
+---
+
+## ✨ Funcionalidades Principais
+
+* **Autenticação de Usuários**
+
+  * Login e cadastro com Firebase Authentication
+
+* **Menu Lateral Personalizado**
+
+  * Navegação intuitiva entre as funcionalidades do app
+
+* **Agendamento de Serviços**
+
+  * Seleção e visualização de datas para agendamento
+
+* **Atendimento Interativo**
+
+  * Chat para coleta de informações do cliente
+  * Persistência dos dados no Firestore
+
+* **Lista de Serviços**
+
+  * Exibição de serviços disponíveis com descrições detalhadas
+
+* **Feedback de Usuários**
+
+  * Envio de avaliações e comentários
+
+* **Contato e Suporte**
+
+  * Informações de contato e envio de e-mails diretamente pelo app
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **React Native**: Framework para desenvolvimento mobile.
-- **Firebase**:
-  - Authentication: Gerenciamento de login e cadastro.
-  - Firestore: Banco de dados para armazenar informações de usuários, pedidos e feedbacks.
-- **React Navigation**: Navegação entre telas.
-- **Expo**: Ferramenta para desenvolvimento e execução do aplicativo.
-- **AsyncStorage**: Armazenamento local para persistência de dados no dispositivo.
+* **React Native** – Desenvolvimento mobile multiplataforma
+* **Expo** – Ambiente de desenvolvimento e execução
+* **Firebase**
 
-## 📂 Estrutura do Projeto
+  * Authentication – Login e cadastro de usuários
+  * Firestore – Banco de dados em nuvem
+* **React Navigation** – Gerenciamento de navegação entre telas
+* **AsyncStorage** – Persistência local de dados
+
+---
+
+## 🗂️ Estrutura do Projeto
+
+```
 ConectClient/
-├── App.js                          # Componente principal do app (entry point)
-├── .gitignore                     # Ignora arquivos sensíveis e desnecessários
-├── .env                           # Variáveis de ambiente (não subir)
-├── package.json                   # Dependências e scripts do projeto
-
-├── src/                           # Código-fonte organizado
+├── App.js                 # Entry point da aplicação
+├── package.json           # Dependências e scripts
+├── .env                   # Variáveis de ambiente (não versionado)
+├── src/
 │   ├── config/
-│   │   └── firebaseConfig.js      # Configuração do Firebase
-
+│   │   └── firebaseConfig.js   # Configuração do Firebase
 │   ├── components/
-│   │   └── CustomDrawerContent.js # Menu lateral personalizado
-
+│   │   └── CustomDrawerContent.js
 │   ├── navigation/
-│   │   └── MenuLateral.js         # Configuração do menu e navegação
-
+│   │   └── MenuLateral.js
 │   ├── screens/
-│   │   ├── AuthLoading.js         # Tela de carregamento/autenticação
-│   │   ├── LoginScreen.js         # Tela de login
-│   │   ├── CadastroScreen.js      # Tela de cadastro
-│   │   ├── AgendamentoScreen.js   # Tela de agendamento
-│   │   ├── AtendimentoScreen.js   # Tela de atendimento interativo
-│   │   ├── ListaServicoScreen.js  # Tela de lista de serviços
-│   │   ├── ContatosScreen.js      # Tela de contato
-│   │   └── FeedbackScreen.js      # Tela de feedback
+│   │   ├── AuthLoading.js
+│   │   ├── LoginScreen.js
+│   │   ├── CadastroScreen.js
+│   │   ├── AgendamentoScreen.js
+│   │   ├── AtendimentoScreen.js
+│   │   ├── ListaServicoScreen.js
+│   │   ├── ContatosScreen.js
+│   │   └── FeedbackScreen.js
+│   └── services/
+│       └── authService.js
+```
 
-│   └── services/                  # Lógica de conexão com o banco ou APIs (separável)
-│       └── authService.js         # (exemplo) lógica de login/cadastro
+---
 
 ## 🚀 Como Executar o Projeto
 
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/seu-usuario/ConectClient.git
-   cd ConectClient
-2. **Instale as dependências:**
+1. Clone o repositório:
 
-3. **Configure o Firebase:**
+```bash
+git clone https://github.com/KaykeRagoso/ConectClient.git
+cd ConectClient
+```
 
-Substitua as credenciais no arquivo firebaseConfig.js com as informações do seu projeto Firebase.
-4. **Execute o aplicativo:**
+2. Instale as dependências:
 
-5. **Teste no emulador ou dispositivo físico:**
+```bash
+npm install
+```
 
-Use o aplicativo Expo Go para testar no dispositivo físico.
-Ou execute no emulador Android/iOS.
+3. Configure o Firebase:
 
-## 📱 Telas do Aplicativo
-Login: Tela inicial para autenticação.
-Cadastro: Tela para criar uma nova conta.
-Menu Lateral: Navegação entre as funcionalidades do aplicativo.
-Agendamento: Seleção de datas para serviços.
-Atendimento: Chat interativo para coleta de informações.
-Lista de Serviços: Exibição de serviços disponíveis.
-Feedback: Envio de avaliações e comentários.
-Contato: Informações de suporte e envio de e-mails.
-🧑‍💻 Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+* Crie um projeto no Firebase
+* Substitua as credenciais no arquivo `firebaseConfig.js`
 
-📄 Licença
-Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para mais informações.
+4. Execute o aplicativo:
 
-Desenvolvido com ❤️ por Kayke Ragoso.
+```bash
+npx expo start
+```
+
+* Utilize o **Expo Go** para testar no dispositivo físico
+* Ou execute em um emulador Android/iOS
+
+---
+
+## 📱 Telas da Aplicação
+
+* Login e Cadastro
+* Menu Lateral de Navegação
+* Agendamento de Serviços
+* Atendimento Interativo
+* Lista de Serviços
+* Feedback de Usuários
+* Contato e Suporte
+
+---
+
+## 📌 Próximas Melhorias (Roadmap)
+
+* Notificações push para lembretes de agendamento
+* Painel administrativo para prestadores de serviço
+* Validações avançadas de formulários
+* Melhorias de UI/UX
+
+---
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas!
+Sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT**.
+
+---
+
+Desenvolvido por **Kayke Ragoso** 🚀
+
+> Projeto criado com foco em aprendizado prático, boas práticas e simulação de ambiente real de desenvolvimento.
